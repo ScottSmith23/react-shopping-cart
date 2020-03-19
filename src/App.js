@@ -29,20 +29,22 @@ function App() {
 
 	return (
 		<div className="App">
-			<ProductProvider value={{ products, addItem }}>
-			<Navigation cart={cart} />
-
+			<CartProvider value={{cart}}>
+			<Navigation  />
+             </CartProvider>
 			{/* Routes */}
 			<Route exact path="/">
+			<ProductProvider value={{ products, addItem }}>
 				<Products />
+				</ProductProvider>
 			</Route>
 
 			<Route path="/cart">
-					<CartProvider>
-				<ShoppingCart cart={cart} removeItem={removeItem} />
+				<CartProvider value={{cart, removeItem}}>
+				<ShoppingCart />
 				</CartProvider>
 			</Route>
-			</ProductProvider>
+			
 		</div>
 	);
 }
