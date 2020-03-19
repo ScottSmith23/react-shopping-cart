@@ -15,6 +15,10 @@ function App() {
 		setCart([...cart, item])
 	};
 
+    const removeItem = item => {
+		
+	};
+
 	return (
 		<div className="App">
 			<Navigation cart={cart} />
